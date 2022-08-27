@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-	return view('welcome');
+	return view('index');
+});
+
+Route::get('/quotes', function () {
+	return view('show');
+});
+
+Route::get('/login', function () {
+	return view('sessions.create');
 });

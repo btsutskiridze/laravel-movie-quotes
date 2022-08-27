@@ -6,8 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Movie quotes</title>
     @vite('resources/css/app.css')
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background: radial-gradient(50% 50% at 50% 50%, #4E4E4E 0%, #3D3B3B 99.99%, #3D3B3B 100%);
+        }
+
+
+    </style>
 </head>
-<body>
-    <h1 class="bg-purple-300 text-white text-center text-4xl">Movie quotes</h1>
+<body {{$attributes(['class' =>" "])}}>
+    {{ $slot }}
 </body>
 </html>
