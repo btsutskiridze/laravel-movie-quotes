@@ -1,10 +1,6 @@
-<x-layout>
-    <aside class="sticky ml-2 top-[40%]">
-        <a href="#" class=" border-white border-solid border-2 w-14 h-14 text-2xl grid place-items-center mb-2 rounded-full text-white">en</a>   
-        <a href="#" class="bg-white hover:bg-slate-200 w-14 h-14 text-2xl grid place-items-center rounded-full text-[#171717]">Ka</a>   
-    </aside>
-    
-    <x-section>
+<x-layout>      
+    <x-aside/>
+    <x-section class="justify-center">
 
         <article id="container" class="w-1/2 text-white">
             <img src="/images/samurai-champloo.jpg" class="mx-auto mt-0 mb-16 rounded-xl" width="550px"  alt="">
