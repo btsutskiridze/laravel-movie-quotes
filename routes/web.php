@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\QuoteController;
+use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-	return view('index');
-});
+Route::get('/', [QuoteController::class, 'index'])->name('random.quote');
 
-Route::get('/quotes', function () {
-	return view('show');
-});
+Route::get('/quotes', [QuoteController::class, 'show'])->name('movie.quotes');
 
-Route::get('/login', function () {
-	return view('sessions.create');
-});
+Route::get('/login', [SessionsController::class, 'create'])->name('login');
