@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="http://fonts.cdnfonts.com/css/sansation" rel="stylesheet">
     <title>Movie quotes</title>
     @vite('resources/css/app.css')
     <style>
@@ -16,7 +17,7 @@
     
     </style>
 </head>
-<body {{$attributes(['class' =>"h-screen"])}}>
+<body {{$attributes(['class' =>"h-screen  font-sansation"])}}>
 
     {{ $slot }}
 
