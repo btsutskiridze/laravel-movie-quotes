@@ -19,8 +19,8 @@ class SessionsController extends Controller
 		if (!auth()->attempt($attributes))
 		{
 			return back()->withInput()->withErrors([
-				'username'=> 'Invalid username',
-				'password'=> 'Invalid password',
+				'username'=> 'invalid username',
+				'password'=> 'invalid password',
 			]);
 		}
 

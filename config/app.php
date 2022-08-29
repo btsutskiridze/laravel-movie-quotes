@@ -91,10 +91,7 @@ return [
 	| List all locales that your application works with
 	|
 	*/
-	'available_locales' => [
-		'English'  => 'en',
-		'Georgian' => 'ka',
-	],
+	'available locales' => ['en', 'ka'],
 
 	/*
 	|--------------------------------------------------------------------------

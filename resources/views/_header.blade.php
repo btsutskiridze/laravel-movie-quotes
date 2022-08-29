@@ -5,13 +5,13 @@
         {{-- dropdown --}}
         <x-dropdown>
             <x-slot name="trigger">
-                <button  class="hover:text-stone-300 rounded-lg px-4 py-3 text-2xl text-white cursor-pointer" >Welcome Back! {{auth()->user()->username}}</button>
+                <button  class="hover:text-stone-300 rounded-lg px-4 py-3 text-1xl text-white cursor-pointer" >{{__('texts.welcome_back')}}! {{auth()->user()->username}}</button>
             </x-slot>
 
-            <x-dropdown-item href="#"  >All movies</x-dropdown-item>
-            <x-dropdown-item href="#" >All quotes</x-dropdown-item>
-            <x-dropdown-item href="#" >Add new</x-dropdown-item>
-            <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()">Log Out</x-dropdown-item>
+            <x-dropdown-item href="#"  >{{__('texts.all_movies')}}</x-dropdown-item>
+            <x-dropdown-item href="#" >{{__('texts.all_quotes')}}</x-dropdown-item>
+            <x-dropdown-item href="#" >{{__('texts.add_new')}}</x-dropdown-item>
+            <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()">{{__('texts.log_out')}}</x-dropdown-item>
         </x-dropdown>
         {{-- for logout --}}
         <form action="/logout" id="logout-form" method="post">

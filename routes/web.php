@@ -3,6 +3,7 @@
 use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LanguageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,5 @@ Route::get('/quotes', [QuoteController::class, 'show'])->name('movie.quotes');
 Route::get('login', [SessionsController::class, 'create'])->name('login.view')->middleware('guest');
 Route::post('sessions', [SessionsController::class, 'store'])->name('login')->middleware('guest');
 Route::post('logout', [SessionsController::class, 'destroy'])->name('logout');
+
+Route::get('/{locale}', [LanguageController::class, 'change'])->name('change.language');
