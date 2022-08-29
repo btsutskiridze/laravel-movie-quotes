@@ -19,4 +19,6 @@ Route::get('/', [QuoteController::class, 'index'])->name('random.quote');
 
 Route::get('/quotes', [QuoteController::class, 'show'])->name('movie.quotes');
 
-Route::get('/login', [SessionsController::class, 'create'])->name('login');
+Route::get('login', [SessionsController::class, 'create'])->name('login.view')->middleware('guest');
+Route::post('sessions', [SessionsController::class, 'store'])->name('login')->middleware('guest');
+Route::post('logout', [SessionsController::class, 'destroy'])->name('logout');
