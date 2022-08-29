@@ -1,5 +1,5 @@
 <x-layout>      
-    <x-aside/>
+    @include('_header')
     <x-section class="justify-center">
 
         <article id="container" class="w-1/2 text-white">
