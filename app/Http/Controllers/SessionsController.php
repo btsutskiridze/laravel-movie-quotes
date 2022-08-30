@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SessionsRequest;
+use Illuminate\Validation\ValidationException;
+
 class SessionsController extends Controller
 {
 	public function create()
@@ -9,16 +12,16 @@ class SessionsController extends Controller
 		return view('sessions.create');
 	}
 
-	public function store()
+	public function store(SessionsRequest $request)
 	{
-		$attributes = request()->validate([
+		$attributes = $request->validate([
 			'username'          => ['required', 'exists:users,username'],
 			'password'          => 'required',
 		]);
 
 		if (!auth()->attempt($attributes))
 		{
-			return back()->withInput()->withErrors([
+			throw ValidationException::withMessages([
 				'username'=> 'invalid username',
 				'password'=> 'invalid password',
 			]);
