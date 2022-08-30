@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\QuoteController;
-use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguageController;
 
@@ -18,10 +18,10 @@ use App\Http\Controllers\LanguageController;
 
 Route::get('/', [QuoteController::class, 'index'])->name('random.quote');
 
-Route::get('/quotes', [QuoteController::class, 'show'])->name('movie.quotes');
+Route::get('quotes', [QuoteController::class, 'show'])->name('quotes.show');
 
-Route::get('login', [SessionsController::class, 'create'])->name('login.view')->middleware('guest');
-Route::post('sessions', [SessionsController::class, 'store'])->name('login')->middleware('guest');
-Route::post('logout', [SessionsController::class, 'destroy'])->name('logout');
+Route::get('login', [SessionController::class, 'create'])->name('login.view')->middleware('guest');
+Route::post('sessions', [SessionController::class, 'store'])->name('login')->middleware('guest');
+Route::post('logout', [SessionController::class, 'destroy'])->name('logout');
 
-Route::get('/{locale}', [LanguageController::class, 'change'])->name('change.language');
+Route::get('language/{locale}', [LanguageController::class, 'change'])->name('change.language');

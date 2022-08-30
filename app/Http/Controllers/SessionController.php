@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\SessionsRequest;
+use App\Http\Requests\SessionRequest;
 use Illuminate\Validation\ValidationException;
 
-class SessionsController extends Controller
+class SessionController extends Controller
 {
 	public function create()
 	{
 		return view('sessions.create');
 	}
 
-	public function store(SessionsRequest $request)
+	public function store(SessionRequest $request)
 	{
 		if (!auth()->attempt(['username' => $request->username, 'password' => $request->password]))
 		{
