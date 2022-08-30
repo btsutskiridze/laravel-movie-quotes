@@ -14,15 +14,9 @@ class SessionsController extends Controller
 
 	public function store(SessionsRequest $request)
 	{
-		$attributes = $request->validate([
-			'username'          => ['required', 'exists:users,username'],
-			'password'          => 'required',
-		]);
-
-		if (!auth()->attempt($attributes))
+		if (!auth()->attempt(['username' => $request->username, 'password' => $request->password]))
 		{
 			throw ValidationException::withMessages([
-				'username'=> 'invalid username',
 				'password'=> 'invalid password',
 			]);
 		}
