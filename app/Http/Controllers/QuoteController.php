@@ -6,11 +6,11 @@ class QuoteController extends Controller
 {
 	public function index()
 	{
-		return view('index');
+		return view('random-quote');
 	}
 
 	public function show()
 	{
-		return view('show');
+		return view('movie-quotes');
 	}
 }

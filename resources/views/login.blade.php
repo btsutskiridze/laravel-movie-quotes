@@ -1,5 +1,5 @@
 <x-layout class="h-screen  grid place-items-center">
-    <form action="/sessions"  method="POST" class="w-1/4">
+    <form action="{{route('login')}}"  method="POST" class="w-1/4">
         @csrf
 
         <div>
