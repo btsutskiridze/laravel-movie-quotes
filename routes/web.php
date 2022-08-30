@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\QuoteController;
-use App\Http\Controllers\SessionController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguageController;
 
@@ -20,8 +20,8 @@ Route::get('/', [QuoteController::class, 'index'])->name('random.quote');
 
 Route::get('quotes', [QuoteController::class, 'show'])->name('quotes.show');
 
-Route::get('login', [SessionController::class, 'create'])->name('login.view')->middleware('guest');
-Route::post('sessions', [SessionController::class, 'store'])->name('login')->middleware('guest');
-Route::post('logout', [SessionController::class, 'destroy'])->name('logout');
+Route::get('login', [AuthController::class, 'create'])->name('login.view')->middleware('guest');
+Route::post('sessions', [AuthController::class, 'store'])->name('login')->middleware('guest');
+Route::post('logout', [AuthController::class, 'destroy'])->name('logout');
 
 Route::get('language/{locale}', [LanguageController::class, 'change'])->name('change.language');
