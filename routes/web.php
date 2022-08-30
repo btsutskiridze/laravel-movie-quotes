@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\QuoteController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LanguageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,14 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-	return view('index');
-});
+Route::get('/', [QuoteController::class, 'index'])->name('random.quote');
+Route::get('quotes', [QuoteController::class, 'show'])->name('quotes.show');
 
-Route::get('/quotes', function () {
-	return view('show');
-});
+Route::get('login', [AuthController::class, 'create'])->name('login.view')->middleware('guest');
+Route::post('login', [AuthController::class, 'store'])->name('login')->middleware('guest');
+Route::post('logout', [AuthController::class, 'destroy'])->name('logout');
 
-Route::get('/login', function () {
-	return view('sessions.create');
-});
+Route::get('language/{locale}', [LanguageController::class, 'change'])->name('change.language');

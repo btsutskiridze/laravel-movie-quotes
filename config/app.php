@@ -85,6 +85,16 @@ return [
 
 	/*
 	|--------------------------------------------------------------------------
+	| Available locales
+	|--------------------------------------------------------------------------
+	|
+	| List all locales that your application works with
+	|
+	*/
+	'available locales' => ['en', 'ka'],
+
+	/*
+	|--------------------------------------------------------------------------
 	| Application Fallback Locale
 	|--------------------------------------------------------------------------
 	|
@@ -93,7 +103,6 @@ return [
 	| the language folders that are provided through your application.
 	|
 	*/
-
 	'fallback_locale' => 'en',
 
 	/*
