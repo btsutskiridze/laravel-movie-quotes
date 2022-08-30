@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="http://fonts.cdnfonts.com/css/sansation" rel="stylesheet">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <title>Movie quotes</title>
+    <title>{{__('texts.movie_quotes')}}</title>
     @vite('resources/css/app.css')
     <style>
         *{
@@ -18,7 +18,7 @@
     
     </style>
 </head>
-<body {{$attributes(['class' =>"h-screen  font-sansation"])}}>
+<body {{$attributes(['class' =>"h-screen font-sansation"])}}>
 
     {{ $slot }}
 
@@ -30,9 +30,9 @@
             class="fixed bg-stone-900 text-white pt-2 pb-1 px-4 rounded-xl bottom-3 right-3 text-lg"
         >
             <p>
-                {{session()->get('success')}}
+                {{ __('texts.' . session()->get('success')) }}
             </p>
         </div>
-    @endif  
+    @endif
 </body>
 </html>

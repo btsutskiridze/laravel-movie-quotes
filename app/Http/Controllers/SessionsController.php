@@ -12,7 +12,7 @@ class SessionsController extends Controller
 	public function store()
 	{
 		$attributes = request()->validate([
-			'username'          => ['required', !('unique:users,username')],
+			'username'          => ['required', 'exists:users,username'],
 			'password'          => 'required',
 		]);
 
@@ -25,12 +25,12 @@ class SessionsController extends Controller
 		}
 
 		// session()->flash('sucess','Welcome back!');
-		return redirect('/')->with('success', 'Welcome back!');
+		return redirect('/')->with('success', 'welcome_back_2');
 	}
 
 	public function destroy()
 	{
 		auth()->logout();
-		return redirect('/')->with('success', 'Successfully Logged out ');
+		return redirect('/')->with('success', 'successfully_logged_out');
 	}
 }
