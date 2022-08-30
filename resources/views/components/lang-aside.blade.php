@@ -1,6 +1,6 @@
 <aside class="fixed ml-4 top-[40%]">
-    <a href="en" id="ka" class="border-solid border-2 w-14 h-14 text-2xl grid place-items-center mb-2 rounded-full text-white">en</a>   
-    <a href="ka" id="en" class="border-solid border-2 w-14 h-14 text-2xl grid place-items-center mb-2 rounded-full text-white">Ka</a>   
+    <a href="{{route('change.language','en')}}" id="ka" class="border-solid border-2 w-14 h-14 text-2xl grid place-items-center mb-2 rounded-full text-white">en</a>   
+    <a href="{{route('change.language','ka')}}" id="en" class="border-solid border-2 w-14 h-14 text-2xl grid place-items-center mb-2 rounded-full text-white">Ka</a>   
 
     @if (App::currentLocale()=='en')
         <script>

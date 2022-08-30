@@ -14,7 +14,7 @@
             <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()">{{__('texts.log_out')}}</x-dropdown-item>
         </x-dropdown>
         {{-- for logout --}}
-        <form action="/logout" id="logout-form" method="post">
+        <form action="{{route('logout')}}" id="logout-form" method="post">
             @csrf
         </form>
 
