@@ -5,7 +5,7 @@
         {{-- dropdown --}}
         <x-dropdown>
             <x-slot name="trigger">
-                <button  class="hover:text-stone-300 rounded-lg px-4 py-3 text-1xl text-white cursor-pointer" >{{__('texts.welcome_back')}}! {{auth()->user()->username}}</button>
+                <button  class="hover:text-stone-300 rounded-lg px-4 py-3 text-1xl text-white cursor-pointer" >{{__('texts.welcome_back')}}!  {{auth()->user()->username}}</button>
             </x-slot>
 
             <x-dropdown-item href="#"  >{{__('texts.all_movies')}}</x-dropdown-item>

@@ -12,7 +12,7 @@
                 required
             >
             @error('username')
-                <p class="text-red-500 text-xs mt-2">{{ __($message) }}</p>
+                <p class="text-red-500 text-xs mt-2">{{ __('texts.invalid_username') }}</p>
             @enderror
         </div>
         <div>
@@ -20,7 +20,7 @@
             <input type="password" class="focus:outline-none focus:bg-zinc-300 border border-gray-200 p-2 w-full rounded" name="password" id="password" required>    
 
             @error('password')
-                <p class="text-red-500 text-xs mt-2">{{ __($message) }}</p>
+                <p class="text-red-500 text-xs mt-2">{{ __('texts.invalid_password') }}</p>
             @enderror
 
         </div>

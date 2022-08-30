@@ -9,6 +9,6 @@ return [
 	'all_quotes'      => 'ყველა ციტატა',
 	'add_new'         => 'ახლის დამატება',
 	'log_out'         => 'გამოსვლა',
-	'invalid username'=> 'არასწორი სახელი',
-	'invalid password'=> 'არასწორი პაროლი',
+	'invalid_username'=> 'არასწორი სახელი',
+	'invalid_password'=> 'არასწორი პაროლი',
 ];

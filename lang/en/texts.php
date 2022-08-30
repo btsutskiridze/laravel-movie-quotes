@@ -9,6 +9,6 @@ return [
 	'all_quotes'      => 'All quotes',
 	'add_new'         => 'Add new',
 	'log_out'         => 'Log out',
-	'invalid username'=> 'Invalid username',
-	'invalid password'=> 'Invalid password',
+	'invalid_username'=> 'Invalid username',
+	'invalid_password'=> 'Invalid password',
 ];
