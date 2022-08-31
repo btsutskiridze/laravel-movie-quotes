@@ -19,5 +19,6 @@ return [
 	'slug'                               => 'slug',
 	'movie_title_en'                     => 'Movie name (English)',
 	'movie_title_ka'                     => 'Movie name (Georgian)',
+	'movie_title'                        => 'Movie name',
 	'thumbnail'                          => 'Thumbnail',
 ];

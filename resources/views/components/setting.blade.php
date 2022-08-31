@@ -1,6 +1,6 @@
 @props(['heading'])
 
-<section class="px-6 py-8v max-w-4xl mx-auto  mt-32 font-sans">
+<section class="px-6 py-8v max-w-4xl mx-auto  mt-20 font-sans">
     <h1 class="text-2xl font-bold text-white mb-8 p-2 bg-stone-500 rounded-lg">
         {{ucwords($heading)}}
     </h1>

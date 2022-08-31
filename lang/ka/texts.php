@@ -19,5 +19,6 @@ return [
 	'slug'                               => 'slug',
 	'movie_title_en'                     => 'ფილმის სახელი (ინგლისურად)',
 	'movie_title_ka'                     => 'ფილმის სახელი (ქართულად)',
+	'movie_title'                        => 'ფილმის სახელი',
 	'thumbnail'                          => 'თამბნეილი',
 ];
