@@ -5,15 +5,15 @@
             <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
                 <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
                     <table class="min-w-full divide-y divide-gray-300">
-                        
-                        <tbody class="divide-y divide-gray-400 bg-white">
 
-                            @foreach ($movies as $movie)
+                        <tbody class="divide-y divide-stone-500 bg-white">
+
+                            @foreach ($quotes as $quote)
                             <tr>
                                 <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
                                 <div class="flex items-center">
 
-                                    <div class="font-medium text-gray-900"><a href="{{route('quotes.show',['movie'=> $movie->slug,])}}">{{ucwords($movie->title_en)}}</a></div>
+                                    <div class="font-medium text-gray-900"><a href="#">{{ucwords($quote->title_en)}}</a></div>
 
                                 </div>
                                 </td>
@@ -23,11 +23,11 @@
                                 </td>
 
                                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                    <a href="#" class="text-blue-500 hover:text-blue-700">Edit</a>
+                                    <a href="/admin/posts/edit" class="text-blue-500 hover:text-blue-700">Edit</a>
                                 </td>
                                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                     {{-- <a href="/admin/posts/{{$post->id}}/edit" class="text-blue-500 hover:text-blue-700">Delete</a> --}}
-                                    <form action="#" method="POST" class="grid place-items-center">
+                                    <form action="/admin/posts/" method="POST" class="grid place-items-center">
                                         @csrf
                                         @method("DELETE")
                                         

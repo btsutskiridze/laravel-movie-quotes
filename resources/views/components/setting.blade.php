@@ -12,7 +12,7 @@
                     <a href="{{route('all.movies')}}">All Movies</a>
                 </li>
                 <li class="{{request()->is('admin/quotes') ? ' text-orange-200' : '' }} text-white" >
-                    <a href="admin/quotes">All Quotes</a>
+                    <a href="{{route('all.quotes')}}">All Quotes</a>
                 </li>
                 <li class="{{request()->is('admin/movies/create') ? ' text-orange-200' : '' }} text-white" >
                     <a href="route('create.movie')" >New Movie</a>
