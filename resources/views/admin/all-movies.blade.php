@@ -13,13 +13,13 @@
                                 <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
                                 <div class="flex items-center">
 
-                                    <div class="font-medium text-gray-900"><a href="{{route('quotes.show',['movie'=> $movie->slug,])}}">{{$movie->title_en}}</a></div>
+                                    <div class="font-medium text-gray-900"><a href="{{route('quotes.show',['movie'=> $movie->slug,])}}">{{ucwords($movie->title_en)}}</a></div>
 
                                 </div>
                                 </td>
 
                                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                                <span class="inline-flex rounded-full bg-green-200 px-2 text-xs font-semibold leading-5 text-green-800">Published</span>
+                                <span class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-600">active</span>
                                 </td>
 
                                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
@@ -31,7 +31,7 @@
                                         @csrf
                                         @method("DELETE")
                                         
-                                        <button class="text-xs text-gray-400">Delete</button>
+                                        <button class="text-xs text-red-600">Delete</button>
                                     </form>
                                 </td>
                             </tr>
