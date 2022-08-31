@@ -17,7 +17,7 @@ use App\Http\Controllers\LanguageController;
 */
 
 Route::get('/', [QuoteController::class, 'index'])->name('random.quote');
-Route::get('quotes', [QuoteController::class, 'show'])->name('quotes.show');
+Route::get('{movie:slug}/quotes', [QuoteController::class, 'show'])->name('quotes.show');
 
 Route::get('login', [AuthController::class, 'create'])->name('login.view')->middleware('guest');
 Route::post('login', [AuthController::class, 'store'])->name('login')->middleware('guest');
