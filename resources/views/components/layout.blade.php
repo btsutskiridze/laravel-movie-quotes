@@ -18,7 +18,7 @@
     
     </style>
 </head>
-<body {{$attributes(['class' =>"h-screen font-sansation"])}}>
+<body {{$attributes(['class' =>"font-sansation"])}}>
 
     {{ $slot }}
 
