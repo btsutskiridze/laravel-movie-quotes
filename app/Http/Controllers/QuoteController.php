@@ -21,9 +21,4 @@ class QuoteController extends Controller
 			'quotes' => $movie->quotes,
 		]);
 	}
-
-	public function create()
-	{
-		return view('admin.create-quote');
-	}
 }

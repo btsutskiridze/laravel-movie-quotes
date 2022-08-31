@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 
-class MovieController extends Controller
+class AdminMovieController extends Controller
 {
 	public function show()
 	{
 		return view('admin.all-movies', [
-			'movies' => Movie::all(),
+			'movies'=> Movie::all(),
 		]);
 	}
 }
