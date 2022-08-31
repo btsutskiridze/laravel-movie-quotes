@@ -4,6 +4,7 @@ use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\MovieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,7 @@ Route::post('login', [AuthController::class, 'store'])->name('login')->middlewar
 Route::post('logout', [AuthController::class, 'destroy'])->name('logout');
 
 Route::get('language/{locale}', [LanguageController::class, 'change'])->name('change.language');
+
+Route::get('admin/quotes/create', [QuoteController::class, 'create'])->middleware('admin')->name('create.quote');
+
+Route::get('admin/movies', [MovieController::class, 'show'])->middleware('admin')->name('all.movies');
