@@ -12,4 +12,9 @@ class AdminMovieController extends Controller
 			'movies'=> Movie::all(),
 		]);
 	}
+
+	public function create()
+	{
+		return view('admin.create-movie');
+	}
 }

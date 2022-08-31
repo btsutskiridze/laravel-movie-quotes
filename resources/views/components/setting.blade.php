@@ -1,6 +1,6 @@
 @props(['heading'])
 
-<section class="px-6 py-8v max-w-4xl mx-auto  mt-52 font-sans">
+<section class="px-6 py-8v max-w-4xl mx-auto  mt-32 font-sans">
     <h1 class="text-2xl font-bold text-white mb-8 p-2 bg-stone-500 rounded-lg">
         {{ucwords($heading)}}
     </h1>
@@ -15,7 +15,7 @@
                     <a href="{{route('all.quotes')}}">All Quotes</a>
                 </li>
                 <li class="{{request()->is('admin/movies/create') ? ' text-orange-200' : '' }} text-white" >
-                    <a href="route('create.movie')" >New Movie</a>
+                    <a href="{{route('create.movie')}}" >New Movie</a>
                 </li>
                 <li class="{{request()->is('admin/quotes/create') ? ' text-orange-200' : '' }} text-white" >
                     <a href="{{route('create.quote')}}" >New Quote</a>

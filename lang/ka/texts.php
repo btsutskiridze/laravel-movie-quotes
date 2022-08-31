@@ -17,4 +17,7 @@ return [
 	'quote_title_en'                     => 'ციტატა (ინგლისურად)',
 	'quote_title_ka'                     => 'ციტატა (ქართულად)',
 	'slug'                               => 'slug',
+	'movie_title_en'                     => 'ფილმის სახელი (ინგლისურად)',
+	'movie_title_ka'                     => 'ფილმის სახელი (ქართულად)',
+	'thumbnail'                          => 'თამბნეილი',
 ];

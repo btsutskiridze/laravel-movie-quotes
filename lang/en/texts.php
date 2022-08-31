@@ -17,4 +17,7 @@ return [
 	'quote_title_en'                     => 'Quote (English)',
 	'quote_title_ka'                     => 'Quote (Georgian)',
 	'slug'                               => 'slug',
+	'movie_title_en'                     => 'Movie name (English)',
+	'movie_title_ka'                     => 'Movie name (Georgian)',
+	'thumbnail'                          => 'Thumbnail',
 ];

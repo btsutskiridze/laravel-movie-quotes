@@ -27,7 +27,8 @@ Route::post('logout', [AuthController::class, 'destroy'])->name('logout');
 
 Route::get('language/{locale}', [LanguageController::class, 'change'])->name('change.language');
 
-Route::get('admin/movies', [AdminMovieController::class, 'show'])->middleware('admin')->name('all.movies');
-
 Route::get('admin/quotes/create', [AdminQuoteController::class, 'create'])->middleware('admin')->name('create.quote');
 Route::get('admin/quotes', [AdminQuoteController::class, 'show'])->middleware('admin')->name('all.quotes');
+
+Route::get('admin/movies/create', [AdminMovieController::class, 'create'])->middleware('admin')->name('create.movie');
+Route::get('admin/movies', [AdminMovieController::class, 'show'])->middleware('admin')->name('all.movies');
