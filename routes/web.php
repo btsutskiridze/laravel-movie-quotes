@@ -19,7 +19,7 @@ use App\Http\Controllers\AdminMovieController;
 */
 
 Route::get('/', [QuoteController::class, 'index'])->name('random.quote');
-Route::get('/movies/{movie:slug}/quotes', [QuoteController::class, 'show'])->name('movie.show_quotes');
+Route::get('movie/{movie:slug}/quotes', [QuoteController::class, 'show'])->name('movie.show_quotes');
 
 Route::get('login', [AuthController::class, 'create'])->middleware('guest')->name('login.create');
 Route::post('login', [AuthController::class, 'login'])->name('login')->middleware('guest');
