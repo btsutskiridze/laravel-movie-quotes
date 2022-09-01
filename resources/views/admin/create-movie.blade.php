@@ -1,8 +1,8 @@
-<x-layout>
+<x-layout class="h-full">
 
     @include('_header')
     <x-setting heading="Publish New Post">
-        <form action="/admin/posts" method="POST" enctype="multipart/form-data">
+        <form action="#" method="POST" enctype="multipart/form-data">
         @csrf
         
         <x-form.input name="movie_title_en"/>

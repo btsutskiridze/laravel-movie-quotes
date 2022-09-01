@@ -10,7 +10,7 @@ class QuoteController extends Controller
 	public function index()
 	{
 		return view('random-quote', [
-			'quote'=> Quote::first(),
+			'quote'=> Quote::first(), //just testing will make random soon
 		]);
 	}
 

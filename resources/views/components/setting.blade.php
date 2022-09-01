@@ -9,16 +9,16 @@
             <h4 class=" text-white rounded text-2xl border-stone-300 mb-4">Links</h4>
             <ul class="text-xl">
                 <li class="{{request()->is('admin/movies') ? ' text-orange-200' : '' }} text-white" >
-                    <a href="{{route('all.movies')}}">All Movies</a>
+                    <a href="{{route('movies')}}">All Movies</a>
                 </li>
                 <li class="{{request()->is('admin/quotes') ? ' text-orange-200' : '' }} text-white" >
-                    <a href="{{route('all.quotes')}}">All Quotes</a>
+                    <a href="{{route('quotes')}}">All Quotes</a>
                 </li>
                 <li class="{{request()->is('admin/movies/create') ? ' text-orange-200' : '' }} text-white" >
-                    <a href="{{route('create.movie')}}" >New Movie</a>
+                    <a href="{{route('movies.create')}}" >New Movie</a>
                 </li>
                 <li class="{{request()->is('admin/quotes/create') ? ' text-orange-200' : '' }} text-white" >
-                    <a href="{{route('create.quote')}}" >New Quote</a>
+                    <a href="{{route('quotes.create')}}" >New Quote</a>
                 </li>
             </ul>
         </aside>
