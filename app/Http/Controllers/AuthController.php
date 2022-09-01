@@ -12,7 +12,7 @@ class AuthController extends Controller
 		return view('login');
 	}
 
-	public function store(AuthRequest $request)
+	public function login(AuthRequest $request)
 	{
 		if (!auth()->attempt(['username' => $request->username, 'password' => $request->password]))
 		{

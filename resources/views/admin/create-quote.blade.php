@@ -12,7 +12,7 @@
         
         <label for="movie_id" class="block mb-1  text-base text-white">{{__('texts.movie_title' )}}</label>
         <select name="movie_id" id="movie_id" class="py-2 px-1  rounded focus:outline-none w-full">
-                @foreach (\App\Models\Movie::all() as $movie)
+                @foreach ($movies as $movie)
                     <option value="{{$movie->id }}" {{old('movie_id') == $movie->id ? 'selected' : '' }}   >{{ucwords($movie->title_en)}}</option>
                 @endforeach
         </select>
