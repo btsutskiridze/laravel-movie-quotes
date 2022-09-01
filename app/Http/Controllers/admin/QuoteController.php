@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
-use App\Models\Quote;
+use App\Http\Controllers\Controller;
 use App\Models\Movie;
+use App\Models\Quote;
 
-class AdminQuoteController extends Controller
+class QuoteController extends Controller
 {
 	public function create()
 	{
