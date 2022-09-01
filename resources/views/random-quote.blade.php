@@ -8,7 +8,7 @@
             <h1 class="text-center text-3xl font-normal">
                 <a 
                     class="underline" 
-                    href="{{route('quotes.show',['movie'=> $quote->movie->slug,])}}"
+                    href="{{route('movie.show_quotes',['movie'=> $quote->movie->slug,])}}"
                 >
                     {{$quote->movie->title_en}}
                 </a>

@@ -13,7 +13,7 @@
                                 <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
                                 <div class="flex items-center">
 
-                                    <div class="font-medium text-gray-900"><a href="{{route('quotes.show',['movie'=> $movie->slug,])}}">{{ucwords($movie->title_en)}}</a></div>
+                                    <div class="font-medium text-gray-900"><a href="{{route('movie.show_quotes',['movie'=> $movie->slug,])}}">{{ucwords($movie->title_en)}}</a></div>
 
                                 </div>
                                 </td>
