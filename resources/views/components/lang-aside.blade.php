@@ -1,6 +1,6 @@
 <aside class="fixed ml-4 top-[40%]">
     <a 
-        href="{{route('change.language','en')}}" 
+        href="{{route('language.change','en')}}" 
         id="ka" 
         class="
             border-solid border-2 w-14 h-14 
@@ -11,7 +11,7 @@
         en
     </a>   
     <a 
-        href="{{route('change.language','ka')}}" 
+        href="{{route('language.change','ka')}}" 
         id="en" 
         class="border-solid border-2 
         w-14 h-14 text-2xl grid 

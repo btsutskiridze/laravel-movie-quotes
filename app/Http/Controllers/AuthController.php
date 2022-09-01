@@ -12,7 +12,7 @@ class AuthController extends Controller
 		return view('login');
 	}
 
-	public function store(AuthRequest $request)
+	public function login(AuthRequest $request)
 	{
 		if (!auth()->attempt(['username' => $request->username, 'password' => $request->password]))
 		{
@@ -25,7 +25,7 @@ class AuthController extends Controller
 		return redirect('/')->with('success', 'welcome_back_2');
 	}
 
-	public function destroy()
+	public function logout()
 	{
 		auth()->logout();
 		return redirect('/')->with('success', 'successfully_logged_out');

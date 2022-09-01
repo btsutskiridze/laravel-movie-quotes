@@ -4,6 +4,8 @@ use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\AdminQuoteController;
+use App\Http\Controllers\AdminMovieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +19,16 @@ use App\Http\Controllers\LanguageController;
 */
 
 Route::get('/', [QuoteController::class, 'index'])->name('random.quote');
-Route::get('quotes', [QuoteController::class, 'show'])->name('quotes.show');
+Route::get('movie/{movie:slug}/quotes', [QuoteController::class, 'show'])->name('movie.show_quotes');
 
-Route::get('login', [AuthController::class, 'create'])->name('login.view')->middleware('guest');
-Route::post('login', [AuthController::class, 'store'])->name('login')->middleware('guest');
-Route::post('logout', [AuthController::class, 'destroy'])->name('logout');
+Route::get('login', [AuthController::class, 'create'])->middleware('guest')->name('login.create');
+Route::post('login', [AuthController::class, 'login'])->middleware('guest')->name('login');
+Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('language/{locale}', [LanguageController::class, 'change'])->name('change.language');
+Route::get('language/{locale}', [LanguageController::class, 'change'])->name('language.change');
+
+Route::get('admin/quotes/create', [AdminQuoteController::class, 'create'])->middleware('admin')->name('quotes.create');
+Route::get('admin/quotes', [AdminQuoteController::class, 'show'])->middleware('admin')->name('quotes.show');
+
+Route::get('admin/movies/create', [AdminMovieController::class, 'create'])->middleware('admin')->name('movies.create');
+Route::get('admin/movies', [AdminMovieController::class, 'show'])->middleware('admin')->name('movies.show');
