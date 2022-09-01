@@ -22,10 +22,10 @@ Route::get('/', [QuoteController::class, 'index'])->name('random.quote');
 Route::get('movie/{movie:slug}/quotes', [QuoteController::class, 'show'])->name('movie.show_quotes');
 
 Route::get('login', [AuthController::class, 'create'])->middleware('guest')->name('login.create');
-Route::post('login', [AuthController::class, 'login'])->name('login')->middleware('guest');
-Route::post('logout', [AuthController::class, 'destroy'])->name('logout');
+Route::post('login', [AuthController::class, 'login'])->middleware('guest')->name('login');
+Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('language/{locale}', [LanguageController::class, 'change'])->name('change.language');
+Route::get('language/{locale}', [LanguageController::class, 'change'])->name('language.change');
 
 Route::get('admin/quotes/create', [AdminQuoteController::class, 'create'])->middleware('admin')->name('quotes.create');
 Route::get('admin/quotes', [AdminQuoteController::class, 'show'])->middleware('admin')->name('quotes.show');
