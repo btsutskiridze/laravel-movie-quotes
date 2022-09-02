@@ -4,15 +4,15 @@
         <div >
             <h1 class="text-3xl self-start font-normal mb-[60px]">
                 <a class="text-white cursor-pointer">
-                    {{$movie->title_en}}
+                    {{$movie->title}}
                 </a>
             </h1>
             @foreach ($quotes as $quote)
-                <x-quote title="{{$quote->title_en}}"/>
+                <x-quote title="{{$quote->title}}"/>
             @endforeach
 
 
-            {{-- <x-quote title="{{$quote->title_en}}"/> --}}
+            {{-- <x-quote title="{{$quote->title}}"/> --}}
             {{-- <x-quote/>
             <x-quote/>
             <x-quote/>

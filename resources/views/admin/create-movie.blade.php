@@ -7,7 +7,6 @@
         
         <x-form.input name="movie_title_en"/>
         <x-form.input name="movie_title_ka"/>
-        <x-form.input name="slug" />
         <x-form.button>Add Movie</x-form.button>
         </form>
     </x-setting>
