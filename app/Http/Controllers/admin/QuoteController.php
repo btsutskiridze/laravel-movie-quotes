@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreQuoteRequest;
 use App\Models\Movie;
 use App\Models\Quote;
+use App\Http\Requests\UpdateQuoteRequest;
 
 class QuoteController extends Controller
 {
@@ -31,6 +32,30 @@ class QuoteController extends Controller
 		$quote->setTranslation('title', 'en', $request->title_en);
 		$quote->setTranslation('title', 'ka', $request->title_ka);
 		$quote->save();
+
+		return redirect()->route('quotes.show');
+	}
+
+	public function edit(Quote $quote)
+	{
+		return view('admin.edit-quote', [
+			'quote'  => $quote,
+			'movies' => Movie::all(),
+		]);
+	}
+
+	public function update(UpdateQuoteRequest $request, Quote $quote)
+	{
+		$quote->movie_id = $request->movie_id;
+
+		if (!isset($quote->thumbnail))
+		{
+			$quote->thumbnail = $request->file('thumbnail')->store('thumbnails');
+		}
+
+		$quote->setTranslation('title', 'en', $request->title_en);
+		$quote->setTranslation('title', 'ka', $request->title_ka);
+		$quote->update();
 
 		return redirect()->route('quotes.show');
 	}

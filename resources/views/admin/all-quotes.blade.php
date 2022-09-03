@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout class="h-screen overflow-y-hidden">
     @include('_header')
     <x-setting heading="all movies">
         <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -23,7 +23,7 @@
                                 </td>
 
                                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                    <a href="/admin/posts/edit" class="text-blue-500 hover:text-blue-700">Edit</a>
+                                    <a href="{{route('quote.edit',$quote)}}" class="text-blue-500 hover:text-blue-700">Edit</a>
                                 </td>
                                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                     {{-- <a href="/admin/posts/{{$post->id}}/edit" class="text-blue-500 hover:text-blue-700">Delete</a> --}}
