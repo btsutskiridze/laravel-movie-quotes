@@ -1,6 +1,6 @@
-<x-layout class="h-screen overflow-y-hidden">
+<x-layout class="h-screen  ">
     @include('_header')
-    <x-setting heading="Publish New Post">
+    <x-setting heading="add new movie">
         <form action="{{route('movie.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             @error('slug')

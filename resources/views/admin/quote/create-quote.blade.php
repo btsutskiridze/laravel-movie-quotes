@@ -1,6 +1,6 @@
-<x-layout class="h-screen overflow-y-hidden">
+<x-layout class="h-screen">
     @include('_header')
-    <x-setting heading="Publish New Post" >
+    <x-setting heading="Add new Quote" >
             @if ($movies->count()< 1)
                 <p class="text-3xl font-bold text-red-300 text-center">Add movie to insert new Quote</p>
             @else

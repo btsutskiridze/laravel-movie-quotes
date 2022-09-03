@@ -1,6 +1,6 @@
-<x-layout class="h-screen overflow-y-hidden">
+<x-layout class="h-screen  ">
     @include('_header')
-    <x-setting heading="all movies">
+    <x-setting heading="all quotes">
         <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
                 <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">

@@ -1,4 +1,4 @@
-<x-layout class="h-screen overflow-y-hidden">
+<x-layout class="h-screen  ">
     @include('_header')
     <x-setting heading="Edit movie: {{$movie->title}} ">
         <form action="{{route('movie.update',$movie)}}" method="POST" enctype="multipart/form-data">

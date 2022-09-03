@@ -12,14 +12,14 @@ class QuoteController extends Controller
 {
 	public function create()
 	{
-		return view('admin.create-quote', [
+		return view('admin.quote.create-quote', [
 			'movies'=> Movie::all(),
 		]);
 	}
 
 	public function show()
 	{
-		return view('admin.all-quotes', [
+		return view('admin.quote.all-quotes', [
 			'quotes'=> Quote::all(),
 		]);
 	}
@@ -38,7 +38,7 @@ class QuoteController extends Controller
 
 	public function edit(Quote $quote)
 	{
-		return view('admin.edit-quote', [
+		return view('admin.quote.edit-quote', [
 			'quote'  => $quote,
 			'movies' => Movie::all(),
 		]);

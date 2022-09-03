@@ -1,4 +1,4 @@
-<x-layout class="h-screen overflow-y-hidden">
+<x-layout class="h-screen  ">
     @include('_header')
     <x-setting :heading=" 'Edit quote: ' . $quote->title" >
         <form action="{{route('quote.update',$quote)}}" method="POST" enctype="multipart/form-data">

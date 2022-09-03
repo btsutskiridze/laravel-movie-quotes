@@ -12,14 +12,14 @@ class MovieController extends Controller
 {
 	public function show()
 	{
-		return view('admin.all-movies', [
+		return view('admin.movie.all-movies', [
 			'movies'=> Movie::all(),
 		]);
 	}
 
 	public function create()
 	{
-		return view('admin.create-movie');
+		return view('admin.movie.create-movie');
 	}
 
 	public function store(StoreMovieRequest $request)
@@ -34,7 +34,7 @@ class MovieController extends Controller
 
 	public function edit(Movie $movie)
 	{
-		return view('admin.edit-movie', [
+		return view('admin.movie.edit-movie', [
 			'movie' => $movie,
 		]);
 	}
