@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Movie;
 use App\Http\Requests\StoreMovieRequest;
 use Illuminate\Support\Str;
+use App\Http\Requests\UpdateMovieRequest;
 
 class MovieController extends Controller
 {
@@ -37,5 +38,14 @@ class MovieController extends Controller
 		return view('admin.edit-movie', [
 			'movie' => $movie,
 		]);
+	}
+
+	public function update(UpdateMovieRequest $request, Movie $movie)
+	{
+		$movie->slug = Str::slug($request->title_en);
+		$movie->setTranslation('title', 'en', $request->title_en);
+		$movie->setTranslation('title', 'ka', $request->title_ka);
+		$movie->update();
+		return redirect()->route('movies.show');
 	}
 }

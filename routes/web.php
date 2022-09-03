@@ -37,3 +37,4 @@ Route::get('admin/movies/create', [AdminMovieController::class, 'create'])->midd
 Route::get('admin/movies', [AdminMovieController::class, 'show'])->middleware('admin')->name('movies.show');
 Route::post('admin/movie', [AdminMovieController::class, 'store'])->middleware('admin')->name('movie.store');
 Route::get('admin/movies/{movie:slug}/edit', [AdminMovieController::class, 'edit'])->middleware('admin')->name('movie.edit');
+Route::patch('admin/movies/{movie:slug}', [AdminMovieController::class, 'update'])->middleware('admin')->name('movie.update');
