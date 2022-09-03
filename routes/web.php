@@ -29,6 +29,7 @@ Route::get('language/{locale}', [LanguageController::class, 'change'])->name('la
 
 Route::get('admin/quotes/create', [AdminQuoteController::class, 'create'])->middleware('admin')->name('quotes.create');
 Route::get('admin/quotes', [AdminQuoteController::class, 'show'])->middleware('admin')->name('quotes.show');
+Route::post('admin/quote', [AdminQuoteController::class, 'store'])->middleware('admin')->name('quote.store');
 
 Route::get('admin/movies/create', [AdminMovieController::class, 'create'])->middleware('admin')->name('movies.create');
 Route::get('admin/movies', [AdminMovieController::class, 'show'])->middleware('admin')->name('movies.show');
