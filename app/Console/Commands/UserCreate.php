@@ -28,11 +28,21 @@ class UserCreate extends Command
 	 */
 	public function handle()
 	{
-		User::create([
-			'username' => $this->ask('Enter username'),
-			'email'    => $this->ask('Enter email'),
-			'password' => bcrypt($this->secret('Enter password')),
-		]);
+		$user = new User();
+		$user->username = $this->ask('Enter username');
+		$user->email = $this->ask('Enter email');
+		$user->password = bcrypt($this->secret('Enter password'));
+
+		if (!filter_var($user->email, FILTER_VALIDATE_EMAIL))
+		{
+			$this->error('please enter valid email');
+		}
+		else
+		{
+			$user->save();
+			$this->info('registration successed');
+		}
+
 		return 0;
 	}
 }

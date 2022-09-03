@@ -1,6 +1,6 @@
 <x-layout class="h-screen  ">
     @include('_header')
-    <x-setting heading="Edit movie: {{$movie->title}} ">
+    <x-setting heading="{{__('texts.edit_movie')}}: {{$movie->title}} ">
         <form action="{{route('movie.update',$movie)}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PATCH')

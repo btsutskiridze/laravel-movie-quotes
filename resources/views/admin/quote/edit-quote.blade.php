@@ -1,6 +1,6 @@
 <x-layout class="h-screen  ">
     @include('_header')
-    <x-setting :heading=" 'Edit quote: ' . $quote->title" >
+    <x-setting heading="{{__('texts.edit_quote')}}: {{$quote->title}} " >
         <form action="{{route('quote.update',$quote)}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method("PATCH")

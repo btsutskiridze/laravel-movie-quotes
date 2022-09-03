@@ -3,7 +3,7 @@
         @csrf
 
         <div>
-            <label for="username" class="block mb-2 uppercase font-bold text-xs text-white">{{__('texts.username')}}</label>
+            <label for="username" class="block mb-2 uppercase font-bold text-xs text-white">{{__('texts.username_email')}}</label>
             <input
                 type="text" 
                 class="focus:outline-none focus:bg-zinc-300 border border-gray-200 p-2 w-full rounded"
@@ -12,7 +12,7 @@
                 required
             >
             @error('username')
-                <p class="text-red-500 text-xs mt-2">{{ __('texts.invalid_username') }}</p>
+                <p class="text-red-500 text-xs mt-2">{{ __('texts.invalid_username_or_email') }}</p>
             @enderror
         </div>
         <div>
@@ -26,6 +26,4 @@
         </div>
         <x-form.button>{{__('texts.log_in')}}</x-form.button>
     </form>
-
-
 </x-layout>
