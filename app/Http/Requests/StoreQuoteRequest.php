@@ -19,10 +19,18 @@ class StoreQuoteRequest extends FormRequest
 	public function rules()
 	{
 		return [
-			'title_en'       => ['required'],
-			'title_ka'       => ['required'],
+			'title_en'       => ['required', 'min:4'],
+			'title_ka'       => ['required', 'min:4'],
 			'thumbnail'      => ['required', 'image'],
 			'movie_id'       => ['required'],
+		];
+	}
+
+	public function attributes()
+	{
+		return[
+			'title_en' => 'Quote',
+			'title_ka' => 'Quote',
 		];
 	}
 }

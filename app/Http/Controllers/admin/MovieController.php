@@ -29,7 +29,6 @@ class MovieController extends Controller
 		$movie->setTranslation('title', 'en', $request->title_en);
 		$movie->setTranslation('title', 'ka', $request->title_ka);
 		$movie->save();
-
 		return redirect()->route('movies.show');
 	}
 
