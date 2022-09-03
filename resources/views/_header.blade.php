@@ -7,7 +7,7 @@
             <x-slot name="trigger">
                 <button  class="hover:text-stone-300 rounded-lg px-4 py-3 text-1xl text-white cursor-pointer" >{{__('texts.welcome_back')}}!  {{auth()->user()->username}}</button>
             </x-slot>
-            <x-dropdown-item href="{{route('random.quote')}}" >Home</x-dropdown-item>
+            <x-dropdown-item href="{{route('random.quote')}}" >{{__('texts.home')}}</x-dropdown-item>
             <x-dropdown-item href="{{route('quotes.show')}}" >Dashboard</x-dropdown-item>
             <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()">{{__('texts.log_out')}}</x-dropdown-item>
         </x-dropdown>
