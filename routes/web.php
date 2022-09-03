@@ -38,3 +38,4 @@ Route::get('admin/movies', [AdminMovieController::class, 'show'])->middleware('a
 Route::post('admin/movie', [AdminMovieController::class, 'store'])->middleware('admin')->name('movie.store');
 Route::get('admin/movies/{movie:slug}/edit', [AdminMovieController::class, 'edit'])->middleware('admin')->name('movie.edit');
 Route::patch('admin/movies/{movie:slug}', [AdminMovieController::class, 'update'])->middleware('admin')->name('movie.update');
+Route::delete('admin/movies/{movie:slug}', [AdminMovieController::class, 'destroy'])->middleware('admin')->name('movie.delete');
