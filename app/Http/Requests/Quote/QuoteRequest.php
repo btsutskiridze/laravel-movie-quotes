@@ -1,26 +1,27 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Quote;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateMovieRequest extends FormRequest
+class QuoteRequest extends FormRequest
 {
 	/**
 	 * Determine if the user is authorized to make this request.
 	 *
 	 * @return bool
 	 */
+
 	/**
 	 * Get the validation rules that apply to the request.
 	 *
 	 * @return array<string, mixed>
 	 */
-	public function rules()
+	public function attributes()
 	{
-		return [
-			'title_en' => ['required'],
-			'title_ka' => ['required'],
+		return[
+			'title_en' => 'Quote',
+			'title_ka' => 'Quote',
 		];
 	}
 }

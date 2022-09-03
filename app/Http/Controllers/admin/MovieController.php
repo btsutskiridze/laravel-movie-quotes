@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Movie\StoreMovieRequest;
+use App\Http\Requests\Movie\UpdateMovieRequest;
 use App\Models\Movie;
-use App\Http\Requests\StoreMovieRequest;
 use Illuminate\Support\Str;
-use App\Http\Requests\UpdateMovieRequest;
 
 class MovieController extends Controller
 {

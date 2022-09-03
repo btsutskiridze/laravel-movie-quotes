@@ -1,10 +1,8 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Quote;
 
-use Illuminate\Foundation\Http\FormRequest;
-
-class StoreQuoteRequest extends FormRequest
+class StoreQuoteRequest extends QuoteRequest
 {
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -23,14 +21,6 @@ class StoreQuoteRequest extends FormRequest
 			'title_ka'       => ['required', 'min:4'],
 			'thumbnail'      => ['required', 'image'],
 			'movie_id'       => ['required'],
-		];
-	}
-
-	public function attributes()
-	{
-		return[
-			'title_en' => 'Quote',
-			'title_ka' => 'Quote',
 		];
 	}
 }
