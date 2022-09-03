@@ -22,7 +22,7 @@ class UpdateQuoteRequest extends FormRequest
 		return [
 			'title_en'       => ['required'],
 			'title_ka'       => ['required'],
-			'thumbnail'      => $quote->exists ? ['image'] : ['required', 'image'],
+			'thumbnail'      => ['image'],
 			'movie_id'       => ['required'],
 		];
 	}
