@@ -22,15 +22,11 @@
                 </li>
             </ul>
         </aside>
-    
+
         <main class="flex-1">
             <x-panel>
                 {{$slot}}
             </x-panel>
         </main>
     </div>
-
-
-
-
 </section>

@@ -8,17 +8,12 @@
                 </a>
             </h1>
             @foreach ($quotes as $quote)
-                <x-quote title="{{$quote->title}}"/>
+                {{-- single quote --}}
+                <div class="bg-white rounded-lg  border-2 mb-[67px] border-black">
+                    <img src="{{asset('storage/' . $quote->thumbnail)}}" class="rounded-t-md border-b-2 z-10 w-full h-72 border-black object-cover"  alt="">
+                    <p class="text-center text-xl font-normal px-3 py-4">"{{$quote->title}}"</p>
+                </div>
             @endforeach
-
-
-            {{-- <x-quote title="{{$quote->title}}"/> --}}
-            {{-- <x-quote/>
-            <x-quote/>
-            <x-quote/>
-            <x-quote/>
-            <x-quote/> --}}
-
         </div>
     </x-section>
 </x-layout>

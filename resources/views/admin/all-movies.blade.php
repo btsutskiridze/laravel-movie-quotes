@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout class="h-screen overflow-y-hidden">
     @include('_header')
     <x-setting heading="all movies">
         <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
