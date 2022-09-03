@@ -23,7 +23,7 @@
                                 </td>
 
                                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                    <a href="#" class="text-blue-500 hover:text-blue-700">Edit</a>
+                                    <a href="{{route('movie.edit',$movie)}}" class="text-blue-500 hover:text-blue-700">Edit</a>
                                 </td>
                                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                     {{-- <a href="/admin/posts/{{$post->id}}/edit" class="text-blue-500 hover:text-blue-700">Delete</a> --}}
