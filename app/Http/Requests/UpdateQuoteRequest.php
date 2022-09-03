@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Quote;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateQuoteRequest extends FormRequest
@@ -16,12 +17,12 @@ class UpdateQuoteRequest extends FormRequest
 	 *
 	 * @return array<string, mixed>
 	 */
-	public function rules()
+	public function rules(Quote $quote)
 	{
 		return [
 			'title_en'       => ['required'],
 			'title_ka'       => ['required'],
-			'thumbnail'      => ['image'],
+			'thumbnail'      => $quote->exists ? ['image'] : ['required', 'image'],
 			'movie_id'       => ['required'],
 		];
 	}

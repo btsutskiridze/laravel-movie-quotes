@@ -48,7 +48,7 @@ class QuoteController extends Controller
 	{
 		$quote->movie_id = $request->movie_id;
 
-		if (!isset($quote->thumbnail))
+		if (isset($quote->thumbnail))
 		{
 			$quote->thumbnail = $request->file('thumbnail')->store('thumbnails');
 		}

@@ -11,7 +11,7 @@
 
             <div class="flex mt-6">
                 <div class="flex-1">
-                    <x-form.input name="thumbnail" type="file" :value="old('thumbnail',$quote->thumbnail)"/>
+                    <x-form.input name="thumbnail" type="file" />
                 </div>
                 <img src="{{asset('storage/' . $quote->thumbnail)}}" alt="" class="rounded-xl ml-6 w-[100px] h-[100px] object-cover">
             </div>
