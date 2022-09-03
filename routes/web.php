@@ -32,3 +32,4 @@ Route::get('admin/quotes', [AdminQuoteController::class, 'show'])->middleware('a
 
 Route::get('admin/movies/create', [AdminMovieController::class, 'create'])->middleware('admin')->name('movies.create');
 Route::get('admin/movies', [AdminMovieController::class, 'show'])->middleware('admin')->name('movies.show');
+Route::post('admin/movie', [AdminMovieController::class, 'store'])->middleware('admin')->name('movie.store');
