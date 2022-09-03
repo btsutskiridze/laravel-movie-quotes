@@ -26,7 +26,7 @@ class UserCreate extends Command
 	 *
 	 * @return int
 	 */
-	public function handle()
+	public function handle(): int
 	{
 		$user = new User();
 		$user->username = $this->ask('Enter username');

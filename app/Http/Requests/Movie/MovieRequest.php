@@ -7,18 +7,7 @@ use Illuminate\Support\Str;
 
 class MovieRequest extends FormRequest
 {
-	/**
-	 * Determine if the user is authorized to make this request.
-	 *
-	 * @return bool
-	 */
-
-	/**
-	 * Get the validation rules that apply to the request.
-	 *
-	 * @return array<string, mixed>
-	 */
-	public function attributes()
+	public function attributes(): array
 	{
 		return[
 			'title_ka' => 'Movie name',
@@ -27,7 +16,7 @@ class MovieRequest extends FormRequest
 		];
 	}
 
-	protected function prepareForValidation()
+	protected function prepareForValidation(): void
 	{
 		$this->merge([
 			'slug' => Str::slug($this->title_en),

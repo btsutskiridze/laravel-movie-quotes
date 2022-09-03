@@ -7,24 +7,26 @@ use App\Http\Requests\Quote\StoreQuoteRequest;
 use App\Http\Requests\Quote\UpdateQuoteRequest;
 use App\Models\Movie;
 use App\Models\Quote;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class QuoteController extends Controller
 {
-	public function create()
+	public function create(): View
 	{
 		return view('admin.quote.create-quote', [
 			'movies'=> Movie::all(),
 		]);
 	}
 
-	public function show()
+	public function show(): View
 	{
 		return view('admin.quote.all-quotes', [
 			'quotes'=> Quote::all(),
 		]);
 	}
 
-	public function store(StoreQuoteRequest $request)
+	public function store(StoreQuoteRequest $request): RedirectResponse
 	{
 		$quote = new Quote();
 		$quote->movie_id = $request->movie_id;
@@ -36,7 +38,7 @@ class QuoteController extends Controller
 		return redirect()->route('quotes.show');
 	}
 
-	public function edit(Quote $quote)
+	public function edit(Quote $quote): View
 	{
 		return view('admin.quote.edit-quote', [
 			'quote'  => $quote,
@@ -44,7 +46,7 @@ class QuoteController extends Controller
 		]);
 	}
 
-	public function update(UpdateQuoteRequest $request, Quote $quote)
+	public function update(UpdateQuoteRequest $request, Quote $quote): RedirectResponse
 	{
 		$quote->movie_id = $request->movie_id;
 
@@ -60,7 +62,7 @@ class QuoteController extends Controller
 		return redirect()->route('quotes.show');
 	}
 
-	public function destroy(Quote $quote)
+	public function destroy(Quote $quote): RedirectResponse
 	{
 		$quote->delete();
 		return redirect()->back();
