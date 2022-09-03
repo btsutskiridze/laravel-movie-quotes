@@ -27,7 +27,7 @@
                                 </td>
                                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                     {{-- <a href="/admin/posts/{{$post->id}}/edit" class="text-blue-500 hover:text-blue-700">Delete</a> --}}
-                                    <form action="#" method="POST" class="grid place-items-center">
+                                    <form action="{{route('quote.destroy', $quote)}}" method="POST" class="grid place-items-center">
                                         @csrf
                                         @method("DELETE")
                                         
