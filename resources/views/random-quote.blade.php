@@ -3,7 +3,7 @@
     <x-section class="justify-center">
 
     @if (empty($quote))
-        <p class="text-2xl text-white">No quotes yet!</p>
+        <p class="text-2xl text-white">{{__('texts.no_quotes_yet')}}!</p>
     @else
     <article id="container" class="w-1/2 text-white">
         <img src="{{asset('storage/' . $quote->thumbnail)}}" class="mx-auto mt-0 mb-16 rounded-xl" width="550px"  alt="">

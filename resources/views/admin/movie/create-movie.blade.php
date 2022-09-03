@@ -1,6 +1,6 @@
 <x-layout class="h-screen  ">
     @include('_header')
-    <x-setting heading="add new movie">
+    <x-setting heading="{{__('texts.add_new_movie')}}">
         <form action="{{route('movie.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             @error('slug')
@@ -10,7 +10,7 @@
 
             <x-form.input name="title_ka" text="movie_title_ka" value="{{old('title_ka')}}"/>
 
-            <x-form.button>Add Movie</x-form.button>
+            <x-form.button>{{__('texts.add_movie')}}</x-form.button>
 
         </form>
     </x-setting>

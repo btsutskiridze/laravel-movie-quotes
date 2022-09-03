@@ -1,8 +1,8 @@
 <x-layout class="h-screen">
     @include('_header')
-    <x-setting heading="Add new Quote" >
+    <x-setting heading="{{__('texts.add_new_quote')}}" >
             @if ($movies->count()< 1)
-                <p class="text-3xl font-bold text-red-300 text-center">Add movie to insert new Quote</p>
+                <p class="text-3xl font-bold text-red-300 text-center">{{__('texts.add_movie_to_insert_quotes')}}</p>
             @else
                     <form action="{{route('quote.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -20,7 +20,7 @@
                         @endforeach
                     </select>
 
-                    <x-form.button>Add quote</x-form.button>
+                    <x-form.button>{{__('texts.add_quote')}}</x-form.button>
 
                     </form>
             @endif
