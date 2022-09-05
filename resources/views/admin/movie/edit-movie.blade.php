@@ -11,7 +11,7 @@
 
             <x-form.input name="title_ka" text="movie_title_ka" :value="old('title_ka',$movie->getTranslation('title','ka'))"/>
 
-            <x-form.button>Edit Movie</x-form.button>
+            <x-form.button>{{__('texts.edit_movie')}}</x-form.button>
 
         </form>
     </x-setting>
