@@ -4,8 +4,8 @@ use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguageController;
-use App\Http\Controllers\admin\MovieController as AdminMovieController;
-use App\Http\Controllers\admin\QuoteController as AdminQuoteController;
+use App\Http\Controllers\Admin\QuoteController as AdminQuoteController;
+use App\Http\Controllers\Admin\MovieController as AdminMovieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,20 +31,22 @@ Route::controller(AuthController::class)->group(function () {
 Route::get('language/{locale}', [LanguageController::class, 'change'])->name('language.change');
 
 Route::middleware('admin')->group(function () {
-	Route::controller(AdminQuoteController::class)->group(function () {
-		Route::get('admin/quotes/create', 'create')->name('quotes.create');
-		Route::get('admin/quotes', 'show')->name('quotes.show');
-		Route::post('admin/quote', 'store')->name('quote.store');
-		Route::get('admin/quotes/{quote}/edit', 'edit')->name('quote.edit');
-		Route::patch('admin/quotes/{quote}', 'update')->name('quote.update');
-		Route::delete('admin/quotes/{quote}', 'destroy')->name('quote.destroy');
-	});
-	Route::controller(AdminMovieController::class)->group(function () {
-		Route::get('admin/movies/create', 'create')->name('movies.create');
-		Route::get('admin/movies', 'show')->name('movies.show');
-		Route::post('admin/movie', 'store')->name('movie.store');
-		Route::get('admin/movies/{movie:slug}/edit', 'edit')->name('movie.edit');
-		Route::patch('admin/movies/{movie:slug}', 'update')->name('movie.update');
-		Route::delete('admin/movies/{movie:slug}', 'destroy')->name('movie.destroy');
+	Route::prefix('admin')->group(function () {
+		Route::controller(AdminQuoteController::class)->group(function () {
+			Route::get('/quotes/create', 'create')->name('quotes.create');
+			Route::get('/quotes', 'show')->name('quotes.show');
+			Route::post('/quote', 'store')->name('quote.store');
+			Route::get('/quotes/{quote}/edit', 'edit')->name('quote.edit');
+			Route::patch('/quotes/{quote}', 'update')->name('quote.update');
+			Route::delete('/quotes/{quote}', 'destroy')->name('quote.destroy');
+		});
+		Route::controller(AdminMovieController::class)->group(function () {
+			Route::get('/movies/create', 'create')->name('movies.create');
+			Route::get('/movies', 'show')->name('movies.show');
+			Route::post('/movie', 'store')->name('movie.store');
+			Route::get('/movies/{movie:slug}/edit', 'edit')->name('movie.edit');
+			Route::patch('/movies/{movie:slug}', 'update')->name('movie.update');
+			Route::delete('/movies/{movie:slug}', 'destroy')->name('movie.destroy');
+		});
 	});
 });

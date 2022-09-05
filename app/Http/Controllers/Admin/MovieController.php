@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Movie\StoreMovieRequest;
@@ -41,7 +41,7 @@ class MovieController extends Controller
 		]);
 	}
 
-	public function update(UpdateMovieRequest $request, Movie $movie): RedirectResponse
+	public function update(Movie $movie, UpdateMovieRequest $request): RedirectResponse
 	{
 		$movie->slug = Str::slug($request->title_en);
 		$movie->setTranslation('title', 'en', $request->title_en);
@@ -50,7 +50,7 @@ class MovieController extends Controller
 		return redirect()->route('movies.show');
 	}
 
-	public function destroy(Movie $movie)
+	public function destroy(Movie $movie): RedirectResponse
 	{
 		$movie->delete();
 		return redirect()->back();

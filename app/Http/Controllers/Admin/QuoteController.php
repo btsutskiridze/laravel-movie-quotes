@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Quote\StoreQuoteRequest;
@@ -46,7 +46,7 @@ class QuoteController extends Controller
 		]);
 	}
 
-	public function update(UpdateQuoteRequest $request, Quote $quote): RedirectResponse
+	public function update(Quote $quote, UpdateQuoteRequest $request): RedirectResponse
 	{
 		$quote->movie_id = $request->movie_id;
 
