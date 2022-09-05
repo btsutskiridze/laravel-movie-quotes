@@ -1,33 +1,33 @@
-<x-layout>
+<x-layout class="h-screen  ">
     @include('_header')
-    <x-setting heading="all movies">
+    <x-setting heading="{{__('texts.all_quotes')}}">
         <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
                 <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
                     <table class="min-w-full divide-y divide-gray-300">
-                        
-                        <tbody class="divide-y divide-gray-400 bg-white">
 
-                            @foreach ($movies as $movie)
+                        <tbody class="divide-y divide-stone-500 bg-white">
+
+                            @foreach ($quotes as $quote)
                             <tr>
                                 <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
                                 <div class="flex items-center">
 
-                                    <div class="font-medium text-gray-900"><a href="{{route('movie.show_quotes',['movie'=> $movie->slug,])}}">{{ucwords($movie->title_en)}}</a></div>
+                                    <div class=" text-gray-900"><a href="#">{{ucwords($quote->title)}}</a></div>
 
                                 </div>
                                 </td>
 
                                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                                <span class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-600">Published</span>
+                                <span class="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-600">{{__('texts.published')}}</span>
                                 </td>
 
                                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                    <a href="#" class="text-blue-500 hover:text-blue-700">Edit</a>
+                                    <a href="{{route('quote.edit',$quote)}}" class="text-blue-500 hover:text-blue-700">{{__('texts.edit')}}</a>
                                 </td>
                                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                     {{-- <a href="/admin/posts/{{$post->id}}/edit" class="text-blue-500 hover:text-blue-700">Delete</a> --}}
-                                    <form action="#" method="POST" class="grid place-items-center">
+                                    <form action="{{route('quote.destroy', $quote)}}" method="POST" class="grid place-items-center">
                                         @csrf
                                         @method("DELETE")
                                         

@@ -26,30 +26,23 @@ class UserCreate extends Command
 	 *
 	 * @return int
 	 */
-	public function handle()
+	public function handle(): int
 	{
 		$user = new User();
 		$user->username = $this->ask('Enter username');
 		$user->email = $this->ask('Enter email');
 		$user->password = bcrypt($this->secret('Enter password'));
 
-		if (!$this->validation('email', $user->email)
-		|| $this->validation('username', $user->username))
+		if (!filter_var($user->email, FILTER_VALIDATE_EMAIL))
+		{
+			$this->error('please enter valid email');
+		}
+		else
 		{
 			$user->save();
 			$this->info('registration successed');
 		}
 
 		return 0;
-	}
-
-	protected function validation($key, $value) //check if value exists in database
-	{
-		if (User::all()->pluck($key)->contains($value))
-		{
-			$this->error($key . ' is taken! registration failed');
-			return false;
-		}
-		return true;
 	}
 }

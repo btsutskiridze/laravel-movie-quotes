@@ -18,7 +18,7 @@
     
     </style>
 </head>
-<body {{$attributes(['class' =>"font-sansation"])}}>
+<body {{$attributes(['class' =>"font-sansation, relative"])}}>
 
     {{ $slot }}
 

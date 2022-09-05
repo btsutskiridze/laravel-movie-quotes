@@ -1,24 +1,19 @@
 <x-layout class="h-screen">
     @include('_header')
-    <x-section class="justify-items-start mt-28">
+    <x-section class="justify-items-start pt-28">
         <div >
             <h1 class="text-3xl self-start font-normal mb-[60px]">
                 <a class="text-white cursor-pointer">
-                    {{$movie->title_en}}
+                    {{ucwords($movie->title)}}
                 </a>
             </h1>
             @foreach ($quotes as $quote)
-                <x-quote title="{{$quote->title_en}}"/>
+                {{-- single quote --}}
+                <div class="bg-white rounded-lg  border-2 mb-[67px] border-black">
+                    <img src="{{asset('storage/' . $quote->thumbnail)}}" class="rounded-t-md border-b-2 z-10 w-full h-72 border-black object-cover"  alt="">
+                    <p class="text-center text-xl font-normal px-3 py-4">"{{ucwords($quote->title)}}"</p>
+                </div>
             @endforeach
-
-
-            {{-- <x-quote title="{{$quote->title_en}}"/> --}}
-            {{-- <x-quote/>
-            <x-quote/>
-            <x-quote/>
-            <x-quote/>
-            <x-quote/> --}}
-
         </div>
     </x-section>
 </x-layout>
