@@ -23,7 +23,7 @@
                 @endforeach
             </select>
 
-            <x-form.button>Edit quote</x-form.button>
+            <x-form.button>{{__('texts.edit_quote')}}</x-form.button>
         </form>
     </x-setting>
 </x-layout>
