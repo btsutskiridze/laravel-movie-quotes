@@ -66,6 +66,7 @@ class QuoteController extends Controller
 
 	public function destroy(Quote $quote): RedirectResponse
 	{
+		Storage::delete($quote->thumbnail);
 		$quote->delete();
 		return redirect()->back();
 	}
