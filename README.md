@@ -42,10 +42,10 @@ Admin can create, edit, delete movies and quotes.
 
 ### Getting Started
 
-1\. First of all you need to clone E Space repository from github:
+1\. First of all you need to clone repository from github:
 
 ```sh
-git clone https://github.com/e-space1/espace-back.git
+git clone https://github.com/btsutskiridze/laravel-movie-quotes.git
 ```
 
 2\. Next step requires you to run _composer install_ in order to install all the dependencies.
